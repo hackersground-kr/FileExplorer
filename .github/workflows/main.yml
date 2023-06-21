@@ -2,32 +2,32 @@ name: Build Go app and push to Azure
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Set up Go
-      uses: actions/setup-go@v2
-      with:
-        go-version: 1.16
+      - name: Set up Go
+        uses: actions/setup-go@v2
+        with:
+          go-version: 1.16
 
-    - name: Check out code
-      uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-    - name: Build
-      run: go build -mod=readonly -o go-app.exe -v
+      - name: Build
+        run: go build -mod=readonly -o go-app.exe -v
 
-    - name: Test
-      run: go test
+      - name: Test
+        run: go test
 
-    - name: Deploy to Azure
-      uses: Azure/webapps-deploy@v2
-      with:
-        app-name: fordae
-        package: build/
-        publish-profile: ${{ secrets.azureWebAppPublishProfile }}
+      - name: Deploy to Azure
+        uses: Azure/webapps-deploy@v2
+        with:
+          app-name: fordae
+          package: .
+          publish-profile: ${{ secrets.azureWebAppPublishProfile }}
