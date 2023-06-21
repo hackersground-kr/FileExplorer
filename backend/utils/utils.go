@@ -1,11 +1,12 @@
 package utils
 
 import (
-	"bytes"
-	"crypto/sha256"
-	"encoding/gob"
-	"fmt"
+	"crypto/tls"
+	"crypto/x509"
+	"io/ioutil"
 	"log"
+
+	"github.com/go-sql-driver/mysql"
 )
 
 func HandelERror(err error) {
@@ -13,22 +14,12 @@ func HandelERror(err error) {
 		log.Panic(err)
 	}
 }
-
-func ToBytes(i interface{}) []byte {
-	var aBuffer bytes.Buffer
-	encoder := gob.NewEncoder(&aBuffer)
-	HandelERror(encoder.Encode(i))
-	return aBuffer.Bytes()
-}
-
-func FromBytes(i interface{}, data []byte) {
-	encoder := gob.NewDecoder(bytes.NewReader(data))
-	HandelERror(encoder.Decode(i))
-
-}
-
-func Hash(i interface{}) string {
-	s := fmt.Sprint(i)
-	hash := sha256.Sum256([]byte(s))
-	return fmt.Sprintf("%x", hash)
+func SslTls() {
+	rootCertPool := x509.NewCertPool()
+	pem, err := ioutil.ReadFile("C:/Users/yusun/go/src/github.com/cumedang/FileExplorer/DigiCertGlobalRootCA.crt.pem")
+	HandelERror(err)
+	if ok := rootCertPool.AppendCertsFromPEM(pem); !ok {
+		log.Fatal("Failed to append PEM.")
+	}
+	mysql.RegisterTLSConfig("custom", &tls.Config{RootCAs: rootCertPool})
 }
