@@ -33,3 +33,5 @@ jobs:
           app-name: fordae
           package: .
           slot-name: production
+
+          
