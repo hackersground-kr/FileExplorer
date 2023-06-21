@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='css/signUp.css' rel='stylesheet'>
+    <title>로그인</title>
+</head>
+
+<body>
+
+    <div id="form-container">
+        <div id="form-inner-container">
+            <!-- Sign up form -->
+            <div id="sign-up-container">
+                <h3>Get Started</h3>
+                <form method="post" name="signup">
+                    <label for="username">Name</label>
+                    <input type="text" name="username" id="username" placeholder="Name">
+
+                    <label for="useremail">Email</label>
+                    <input type="email" name="useremail" id="useremail" placeholder="Email">
+
+                    <label for="userpw">Password</label>
+                    <input type="password" name="userpw" id="userpw"
+                        placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;">
+
+                    <div id="form-controls">
+                        <button type="submit">Sign Up</button>
+                        <button type="button" id="toggleSignIn">Sign In</button>
+                    </div>
+
+                    <input type="checkbox" name="terms" id="terms">
+
+                </form>
+            </div>
+
+            <!-- Sign in form -->
+            <div id="sign-in-container" class="hide">
+                <h3>Welcome Back</h3>
+                <form method="post" name="signin">
+                    <label for="loginname">Username</label>
+                    <input type="text" name="loginname" id="loginname" placeholder="user@example.com">
+
+                    <label for="loginpw">Password</label>
+                    <input type="password" name="loginpw" id="userpw"
+                        placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;">
+
+                    <div id="form-controls">
+                        <button type="submit">Sign In</button>
+                        <button type="button" id="toggleSignUp">Sign Up</button>
+                    </div>
+
+                    <input type="checkbox" name="terms" id="terms">
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script src="js/signUp.js"></script>
+
+</html>
