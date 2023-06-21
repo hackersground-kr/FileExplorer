@@ -13,8 +13,6 @@ import (
 	"github.com/gorilla/sessions"
 )
 
-var port = ":8000"
-
 var store = sessions.NewCookieStore([]byte(os.Getenv("doyouknowsanz")))
 
 func home(rw http.ResponseWriter, r *http.Request) {
@@ -88,7 +86,10 @@ func login(rw http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
-
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "8000" // 기본 포트 설정
+	}
 	mux := http.NewServeMux()
 
 	fs := http.FileServer(http.Dir("front"))
