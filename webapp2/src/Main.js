@@ -1,4 +1,4 @@
-export default function DaguePeople(){
+export default function Main(){
   return(
     <div>
       
