@@ -122,10 +122,7 @@ label[for="terms"] {
 input[type="checkbox"] {
   display: none;
 }
-#errorbox {
-  color: #808080;
-  font-size: small;
-}
+
 /* responsive display */
 
 @media (max-width: 1438px) {
