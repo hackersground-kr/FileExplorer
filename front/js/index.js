@@ -44,3 +44,7 @@ if (parseInt(answer)) {
   btn.style.display = "none";
   h.innerHTML = ``;
 }
+
+btn.addEventListener("click", () => {
+  answer = 0;
+});
