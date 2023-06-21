@@ -14,5 +14,6 @@
   "theme_color": "#000000",
   "background_color": "#ffffff",
   "prefer_related_applications": false,
-  "related_applications": []
+  "related_applications": [],
+  "permissions": ["gcm", "notifications", "push", "system", "background-fetch"]
 }
