@@ -34,7 +34,7 @@ f1.addEventListener("click", (e) => {
   }
 });
 
-const f2 = document.querySelector("f2_sub");
+const f2 = document.querySelector("#f2_sub");
 
 f2.addEventListener("click", (e) => {
   const errorbox = document.querySelector("#errorbox2");
