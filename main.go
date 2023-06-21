@@ -36,7 +36,12 @@ func login(rw http.ResponseWriter, r *http.Request) {
 		r.ParseForm()
 		id := r.Form.Get("userlogin")
 		pw := r.Form.Get("loginpw")
-		loginup.Login(id, pw)
+		answer := loginup.Login(id, pw)
+		if answer == 1 {
+			fmt.Fprint(rw, "<script>alert("+id+"님 환영합니다);location.href='front/index.html'</script>")
+		} else {
+			fmt.Fprint(rw, "<script>alert('계정이 존재 하지 않습니다 회원가입 먼저 하여주세요'); location.href='front/signup/signup.html'")
+		}
 	}
 }
 
