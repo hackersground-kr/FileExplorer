@@ -38,7 +38,7 @@ const f2 = document.querySelector("#f2_sub");
 
 f2.addEventListener("click", (e) => {
   const errorbox = document.querySelector("#errorbox2");
-  const id = document.querySelector("#loginid").value;
+  const id = document.querySelector("#userlogin").value;
   const pw = document.querySelector("#loginpw").value;
   const passwordSpecialCharRegex = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
   const passwordKoreanRegex = /[ㄱ-ㅎㅏ-ㅣ가-힣]/;
