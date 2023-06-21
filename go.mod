@@ -1,4 +1,4 @@
-module github.com/cumedang/FileExplorer
+module github.com/cumedang
 
 go 1.16
 
