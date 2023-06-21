@@ -36,21 +36,28 @@ func login(rw http.ResponseWriter, r *http.Request) {
 		r.ParseForm()
 		id := r.Form.Get("userlogin")
 		pw := r.Form.Get("loginpw")
+		fmt.Println(id + " " + pw)
 		answer := loginup.Login(id, pw)
 		if answer == 1 {
-			fmt.Fprint(rw, "<script>alert("+id+"님 환영합니다);location.href='front/index.html'</script>")
+			fmt.Println(1)
+			fmt.Fprint(rw, `<script>alert("`+id+`님 환영합니다");location.href='front/index.html'</script>`)
 		} else {
-			fmt.Fprint(rw, "<script>alert('계정이 존재 하지 않습니다 회원가입 먼저 하여주세요'); location.href='front/signup/signup.html'")
+			fmt.Println(2)
+			fmt.Fprint(rw, `<script>alert('계정이 존재하지 않습니다. 회원가입 먼저 하여주세요'); location.href='front/signup/signup.html'</script>`)
 		}
 	}
 }
 
 func main() {
+	mux := http.NewServeMux()
+
 	fs := http.FileServer(http.Dir("front"))
-	http.HandleFunc("/", home)
-	http.Handle("/front/", http.StripPrefix("/front/", fs))
-	http.HandleFunc("/signup", signup)
-	http.HandleFunc("/login", login)
+	mux.Handle("/front/", http.StripPrefix("/front/", fs))
+
+	mux.HandleFunc("/", home)
+	mux.HandleFunc("/signup", signup)
+	mux.HandleFunc("/login", login)
+
 	fmt.Printf("http://localhost%s", port)
-	log.Fatal(http.ListenAndServe(port, nil))
+	log.Fatal(http.ListenAndServe(port, mux))
 }
