@@ -11,20 +11,23 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Set up Go
-        uses: actions/setup-go@v2
-        with:
-          go-version: 1.20
+    - name: Set up Go
+      uses: actions/setup-go@v2
+      with:
+        go-version: 1.16
 
-      - name: Build
-        run: go build -mod=readonly -o build/go-app.exe -v
+    - name: Check out code
+      uses: actions/checkout@v2
 
-      - name: Test
-        run: go test
+    - name: Build
+      run: go build -mod=readonly -o build/go-app.exe -v
 
-      - name: Deploy to Azure
-        uses: azure/webapps-deploy@v2
-        with:
-          app-name: fordae
-          package: build/
-          publish-profile: ${{ secrets.azureWebAppPublishProfile }}
+    - name: Test
+      run: go test
+
+    - name: Deploy to Azure
+      uses: Azure/webapps-deploy@v2
+      with:
+        app-name: fordae
+        package: build/
+        publish-profile: ${{ secrets.azureWebAppPublishProfile }}
