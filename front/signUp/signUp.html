@@ -15,9 +15,9 @@
             <!-- Sign up form -->
             <div id="sign-up-container">
                 <h3>Get Started</h3>
-                <form method="post" name="/signup">
-                    <label for="username">Name</label>
-                    <input type="text" name="username" id="username" placeholder="Name">
+                <form method="post" action="/signup">
+                    <label for="userid">Name</label>
+                    <input type="text" name="userid" id="userid" placeholder="Name">
 
                     <label for="useremail">Email</label>
                     <input type="email" name="useremail" id="useremail" placeholder="Email">
@@ -39,7 +39,7 @@
             <!-- Sign in form -->
             <div id="sign-in-container" class="hide">
                 <h3>Welcome Back</h3>
-                <form method="post" name="signin">
+                <form method="post" action="/login">
                     <label for="loginname">Username</label>
                     <input type="text" name="loginname" id="loginname" placeholder="user@example.com">
 

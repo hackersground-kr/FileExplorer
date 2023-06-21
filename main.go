@@ -20,7 +20,7 @@ func home(rw http.ResponseWriter, r *http.Request) {
 
 func signup(rw http.ResponseWriter, r *http.Request) {
 	switch r.Method {
-	case "GET":
+	case "POST":
 		r.ParseForm()
 		id := r.Form.Get("userid")
 		pw := r.Form.Get("userpw")
@@ -34,6 +34,6 @@ func main() {
 	http.HandleFunc("/", home)
 	http.Handle("/front/", http.StripPrefix("/front/", fs))
 	http.HandleFunc("/signup", signup)
-	fmt.Printf("localhost%s", port)
+	fmt.Printf("http://localhost%s", port)
 	log.Fatal(http.ListenAndServe(port, nil))
 }
