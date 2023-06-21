@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="1.css" />
+    <link rel="stylesheet" href="css/index.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Jua&family=Poor+Story&display=swap" rel="stylesheet" />
@@ -16,25 +16,46 @@
     <div class="container">
         <header id="header">
             <div class="header_container">
-                <img class="logo" src="logo.png" alt="logo" />
-                <nav class="navbar">
-                    <ul class="navbar_menu">
-                        <li class="font"><a href="#"></a>상담신청</a></li>
-                        <li class="font"><a href="#">로그인</a></li>
+                <h1 id="logo">대구 서비쓰</h1>
+                <nav>
+                    <ul>
+                        <li class="font">
+                            <a href="signUp/signUp.html" id="sign">
+                                Sign
+                            </a>
+                            <div id="hello"></div>
+                        </li>
+                        <li><button id="btn">로그아웃</button></li>
                     </ul>
                 </nav>
             </div>
         </header>
+        <div class="nav_contaner">
+            <nav class="navbar">
+                <ul class="navbar_menu">
+                    <li>
+                        <div>
+                            Job information
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            DEAGU NEWS
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            BENEFITS
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
         <div class="main_container">
-            <div class="slide">
-                <div>
-                </div>
-            </div>
         </div>
     </div>
-    <!— <button class="backBtn">이전</button>
-        <button class="nextBtn">다음</button> —>
-        <script src="1.js"></script>
+
 </body>
+<script src="js/index.js"></script>
 
 </html>
