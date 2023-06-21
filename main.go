@@ -6,7 +6,7 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/cumedang/FileExplorer/backend/login"
+	"github.com/cumedang/FileExplorer/backend/sign"
 	"github.com/cumedang/FileExplorer/backend/utils"
 )
 
@@ -25,7 +25,7 @@ func signup(rw http.ResponseWriter, r *http.Request) {
 		id := r.Form.Get("userid")
 		pw := r.Form.Get("userpw")
 		email := r.Form.Get("useremail")
-		login.Signup(id, pw, email)
+		sign.Signup(id, pw, email)
 	}
 }
 
