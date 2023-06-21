@@ -8,7 +8,9 @@
     <meta name="description" content="Web site created using create-react-app" />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/app_logo.png" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-title" content="Smody" /
+    <meta name="apple-mobile-web-app-title" content="Smody" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-applesdgothicneo@1.0/all.min.css">
 
     <!--
       manifest.json provides metadata used when your web app is installed on a
@@ -38,42 +40,7 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
-    <script>
-      let deferredPrompt;
-
-// beforeinstallprompt 이벤트 리스너 등록
-window.addEventListener('beforeinstallprompt', (event) => {
-  // 이벤트 기본 동작 중지
-  event.preventDefault();
-  // deferredPrompt에 이벤트 저장
-  deferredPrompt = event;
-
-  // PWA 다운로드를 유저에게 알리는 로직을 추가할 수 있습니다.
-  // 예를 들면, 다운로드 알림 배너를 표시하거나 다운로드 버튼을 보여줄 수 있습니다.
-  // 예시로 다운로드 버튼을 보여주는 코드를 작성했습니다.
-  const downloadButton = document.getElementById('download-button');
-  downloadButton.style.display = 'block';
-
-  // 다운로드 버튼 클릭 이벤트 처리
-  downloadButton.addEventListener('click', () => {
-    // deferredPrompt를 사용하여 PWA 다운로드 유도
-    deferredPrompt.prompt();
-
-    // 사용자의 선택 결과를 처리하기 위한 Promise 반환
-    deferredPrompt.userChoice.then((choiceResult) => {
-      if (choiceResult.outcome === 'accepted') {
-        console.log('PWA 다운로드 수락');
-      } else {
-        console.log('PWA 다운로드 거절');
-      }
-
-      // 다운로드 완료 또는 거절 후 이벤트 초기화
-      deferredPrompt = null;
-    });
-  });
-});
-
-    </script>
+    
    
   </body>
 </html>
