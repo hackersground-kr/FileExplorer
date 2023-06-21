@@ -13,7 +13,7 @@ import (
 	"github.com/gorilla/sessions"
 )
 
-var port = ":5000"
+var port = ":8000"
 
 var store = sessions.NewCookieStore([]byte(os.Getenv("doyouknowsanz")))
 
