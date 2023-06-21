@@ -1,35 +1,30 @@
-name: Build Go app and push to Azure
-
 on:
   push:
-    branches: [main]
+    branches: [ main ]
   pull_request:
-    branches: [main]
+    branches: [ main ]
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
       - name: Set up Go
         uses: actions/setup-go@v2
         with:
           go-version: 1.16
 
-      - name: Checkout code
-        uses: actions/checkout@v2
+      - name: Build Go app
+        run: go build -mod=readonly -o go-app.exe -v
 
-      - name: Build
-        run: go build -mod=readonly -o FileExplorer/go-app.exe -v
-        working-directory: ${{ github.workspace }}
+      - name: Run tests
+        run: go test
 
-      - name: Test
-        run: go test ./FileExplorer
-        working-directory: ${{ github.workspace }}
-
-      - name: Deploy to Azure
+      - name: Deploy to Azure Web App
         uses: Azure/webapps-deploy@v2
         with:
           app-name: fordae
-          package: ./FileExplorer
+          package: .
           publish-profile: ${{ secrets.azureWebAppPublishProfile }}
