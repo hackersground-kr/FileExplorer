@@ -13,7 +13,7 @@ import (
 	"github.com/gorilla/sessions"
 )
 
-var port = ":4000"
+var port = ":5000"
 
 var store = sessions.NewCookieStore([]byte(os.Getenv("doyouknowsanz")))
 
@@ -88,10 +88,6 @@ func login(rw http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
-	port := os.Getenv("PORT")
-	if port == "" {
-		port = "4000" // 기본 포트 설정
-	}
 
 	mux := http.NewServeMux()
 
