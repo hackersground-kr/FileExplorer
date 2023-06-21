@@ -1,8 +1,4 @@
 name: Build Go app and push to Azure
-<<<<<<< HEAD
-
-=======
->>>>>>> da61829c8aa0dbe4577820fddf55d2490a828d31
 
 on:
   push:
@@ -16,12 +12,7 @@ jobs:
     - name: Set up Go
       uses: actions/setup-go@v3
       with:
-<<<<<<< HEAD
-        go-version: 1.71
-=======
         go-version: 1.17
->>>>>>> da61829c8aa0dbe4577820fddf55d2490a828d31
-
     - name: Build
       run: go build -o build/go-app.exe -v
 
