@@ -22,9 +22,14 @@ jobs:
       - name: Run tests
         run: go test
 
+      - name: Azure Login
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
       - name: Deploy to Azure Web App
         uses: Azure/webapps-deploy@v2
         with:
           app-name: fordae
           package: .
-          publish-profile: ${{ secrets.azureWebAppPublishProfile }}
+          slot-name: production
