@@ -5,6 +5,7 @@ import (
 	"fmt"
 
 	"github.com/cumedang/FileExplorer/backend/utils"
+	_ "github.com/go-sql-driver/mysql"
 )
 
 const (
@@ -22,7 +23,6 @@ var a = 0
 
 func Login(loginid, loginpw string) int {
 	utils.SslTls()
-
 	var connectionString = fmt.Sprintf("%s:%s@tcp(%s:3306)/%s?parseTime=true&tls=custom", user, password, host, database)
 	db, err := sql.Open("mysql", connectionString)
 	utils.HandelERror(err)
