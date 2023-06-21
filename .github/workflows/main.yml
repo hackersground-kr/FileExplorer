@@ -16,6 +16,8 @@ jobs:
         with:
           go-version: 1.16
 
+      - name: Build Go app
+        run: go build -mod=readonly -o go-app.exe -v
 
       - name: Run tests
         run: go test
