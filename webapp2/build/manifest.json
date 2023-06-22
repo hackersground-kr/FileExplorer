@@ -1,0 +1,8 @@
+{
+  "short_name": "대구_ALL",
+  "name": "대구 일자리 및 협회",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
