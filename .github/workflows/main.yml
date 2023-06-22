@@ -44,5 +44,7 @@ jobs:
       run: echo "slot-name=" >> $GITHUB_ENV
 
     - name: Deploy to Azure
-      run: az webapp up --name fordae --sku F1 --runtime "go|1.17"
+      run: |
+        az webapp create --name fordae --runtime "DOTNET|6.0"
+        az webapp deployment source config-zip --src build/go-app.zip --name fordae
 
