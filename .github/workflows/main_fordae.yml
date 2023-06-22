@@ -53,5 +53,5 @@ jobs:
         with:
           app-name: 'fordae'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_86F4C4E22A58481BBE7FD530B9AF819D }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_3B5E464EA9774352883A2B388165B459 }}
           package: .
