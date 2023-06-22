@@ -1,5 +1,4 @@
 import "./css/DaguePeople.css";
-import Footer from "./Footer";
 
 export default function DaguePeople() {
   return (
