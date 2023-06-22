@@ -24,7 +24,7 @@ jobs:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
 
     - name: Build
-      run: go build -o /go-app.exe -v
+      run: go build -o go-app.exe -v
 
     - name: Test
       run: go test
