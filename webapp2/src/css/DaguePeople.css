@@ -1,0 +1,29 @@
+table {
+  border-collapse: collapse;
+  margin: 10% auto;
+}
+
+table {
+  border-collapse: collapse;
+  margin: 10% auto;
+  transform: scale(0.9);
+}
+
+th,
+td {
+  border: 2px solid;
+  padding: 10px;
+  border-radius: 10px;
+  width: 60px;
+}
+
+th {
+  font-weight: bold;
+}
+
+.title {
+  font-weight: 800px;
+  font-size: 2rem;
+  text-align: center;
+  margin-top: 10px;
+}
