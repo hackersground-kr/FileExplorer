@@ -14,8 +14,8 @@ export default function Main(){
   return(
     <main>
         <div id='menu1'>
-              <div >
-                <img id='main_img' src='static/img/Daegu.jpg'></img>
+              <div id='home'>
+                <h1>홈</h1>
               </div>
 
             <div id='main_one'>
