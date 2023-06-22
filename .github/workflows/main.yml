@@ -44,8 +44,9 @@ jobs:
       run: echo "slot-name=" >> $GITHUB_ENV
 
     - name: Deploy to Azure
-      run: |
-        az webapp create --resource-group rg-hg-FileExplorer --plan ASP-rghgFileExplorer-8d11 --name fordae --runtime "DOTNET|6.0"
-        az webapp deployment source config-zip --src build/go-app.exe --name fordae --resource-group rg-hg-FileExplorer
-
-
+      uses: azure/webapps-deploy@v2
+      with:
+        app-name: fordae
+        package: build/
+        publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+        images: null
