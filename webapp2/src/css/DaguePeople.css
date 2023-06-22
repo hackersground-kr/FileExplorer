@@ -6,6 +6,7 @@ table {
 table {
   border-collapse: collapse;
   margin: 10% auto;
+  transform: scale(0.9);
 }
 
 th,
@@ -21,7 +22,8 @@ th {
 }
 
 .title {
-  font-weight: 900px;
+  font-weight: 800px;
   font-size: 2rem;
   text-align: center;
+  margin-top: 10px;
 }
