@@ -1,32 +1,40 @@
-name: Build and Deploy to Azure Web App
+name: Build and deploy Go app to Azure
 
 on:
   push:
-    branches:
-      - main
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    
+
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
 
-    - name: Set up Azure CLI
-      uses: azure/login@v1
-
-    - name: Configure Azure credentials
-      run: |
-        az config set cloud.azure.com
-        az config set extension.disable_dynamic_install=yes_without_prompt
+    - name: Set up Go
+      uses: actions/setup-go@v3
+      with:
+        go-version: 1.17
 
     - name: Build
       run: go build -o build/go-app.exe -v
 
-    - name: Deploy to Azure Web App
-      run: |
-        az webapp deployment source config-zip \
-          -g <rg-hg-FileExplore> \
-          -n <fordae> \
-          --src build/go-app.exe.zip
+    - name: Test
+      run: go test
+
+    - name: Azure Login
+      uses: azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+    - name: Deploy to Azure
+      uses: Azure/webapps-deploy@v2
+      with:
+        app-name: fordae
+        package: build/
+        slot-name: production
+        publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+        images:
