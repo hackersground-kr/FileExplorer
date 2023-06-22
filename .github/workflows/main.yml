@@ -9,7 +9,7 @@ on:
 jobs:
 
   build:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
 
@@ -24,7 +24,7 @@ jobs:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
 
     - name: Build
-      run: go build -o build/go-app.exe -v
+      run: go build -o /go-app.exe -v
 
     - name: Test
       run: go test
@@ -35,6 +35,5 @@ jobs:
         # Name of the Azure Web App
         app-name: fordae
         # Applies to Web App only: Path to package or folder. *.zip, *.war, *.jar or a folder to deploy
-        package: build/
         publish-profile: ${{ secrets.azureWebAppPublishProfile }}
         images: null
