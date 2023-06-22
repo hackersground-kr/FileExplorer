@@ -24,8 +24,8 @@ func main() {
 	}
 	mux := http.NewServeMux()
 
-	// fs := http.FileServer(http.Dir("front"))
-	// mux.Handle("/front/", http.StripPrefix("/front/", fs))
+	fs := http.FileServer(http.Dir("static"))
+	mux.Handle("/static/", http.StripPrefix("/static/", fs))
 
 	mux.HandleFunc("/", home)
 
