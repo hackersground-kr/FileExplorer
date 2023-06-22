@@ -45,7 +45,7 @@ jobs:
 
     - name: Deploy to Azure
       run: |
-        az webapp create --resource-group MyResourceGroup --plan F1 --name fordae --runtime "DOTNET|6.0"
+        az webapp create --resource-group MyResourceGroup --plan 1 --name fordae --runtime "DOTNET|6.0"
         az webapp deployment source config-zip --src build/go-app.zip --name fordae --resource-group rg-hg-FileExplorer
 
 
