@@ -7,10 +7,10 @@ import (
 	"net/http"
 	"os"
 
-	"github.com/cumedang/FileExplorer/backend/loginup"
-	"github.com/cumedang/FileExplorer/backend/sign"
-	"github.com/cumedang/FileExplorer/backend/utils"
 	"github.com/gorilla/sessions"
+	"gituub.com/cumedang/fileexplorer/backend/loginup"
+	"gituub.com/cumedang/fileexplorer/backend/sign"
+	"gituub.com/cumedang/fileexplorer/backend/utils"
 )
 
 var store = sessions.NewCookieStore([]byte(os.Getenv("doyouknowsanz")))
