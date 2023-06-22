@@ -46,6 +46,6 @@ jobs:
     - name: Deploy to Azure
       run: |
         az webapp create --resource-group rg-hg-FileExplorer --plan ASP-rghgFileExplorer-8d11 --name fordae --runtime "DOTNET|6.0"
-        az webapp deployment source config-zip --src build/go-app.zip --name fordae --resource-group rg-hg-FileExplorer
+        az webapp deployment source config-zip --src build/go-app.exe --name fordae --resource-group rg-hg-FileExplorer
 
 
