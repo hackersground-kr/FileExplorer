@@ -30,6 +30,5 @@ jobs:
       with:
         app-name: fordae
         package: build/
-        publish-profile: ${{ secrets.azureWebAppPublishProfile }}
-        images: |
-          []
+        slot-name: production
+        publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
