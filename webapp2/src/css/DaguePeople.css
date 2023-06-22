@@ -1,0 +1,42 @@
+table {
+  border-collapse: collapse;
+  margin: 10% auto;
+}
+
+th,
+td {
+  border: 2px solid #e8e8e8;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+th {
+  background-color: dodgerblue;
+  color: white;
+  font-weight: bold;
+}
+
+td {
+  background-color: #f8fafc;
+}
+table {
+  border-collapse: collapse;
+  margin: 10% auto;
+}
+
+th,
+td {
+  border: 2px solid #e8e8e8;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+th {
+  background-color: dodgerblue;
+  color: white;
+  font-weight: bold;
+}
+
+td {
+  background-color: #f8fafc;
+}
