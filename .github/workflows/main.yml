@@ -25,6 +25,12 @@ jobs:
     - name: Test
       run: go test
 
+    - name: Check Az CLI version
+      run: az --version
+
+    - name: Install Az CLI
+      uses: azure/setup-az-cli@v1
+
     - name: Azure Login
       uses: azure/login@v1
       with:
