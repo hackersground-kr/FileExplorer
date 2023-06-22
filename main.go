@@ -89,7 +89,7 @@ func login(rw http.ResponseWriter, r *http.Request) {
 func main() {
 	port := os.Getenv("PORT")
 	if port == "" {
-		port = ":5000" // 기본 포트 설정
+		port = "5000" // 기본 포트 설정
 	}
 	mux := http.NewServeMux()
 
@@ -100,6 +100,6 @@ func main() {
 	mux.HandleFunc("/signup", signup)
 	mux.HandleFunc("/login", login)
 
-	fmt.Printf("http://localhost%s", port)
+	fmt.Printf("http://localhost:%s", port)
 	log.Fatal(http.ListenAndServe(port, mux))
 }
