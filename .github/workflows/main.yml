@@ -44,4 +44,5 @@ jobs:
       run: echo "slot-name=" >> $GITHUB_ENV
 
     - name: Deploy to Azure
-      run: az webapp up --name fordae --sku f1 --runtime "go|1.19"
+      run: az webapp up --name fordae --sku F1 --runtime "go|1.17"
+
