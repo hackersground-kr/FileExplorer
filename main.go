@@ -16,7 +16,7 @@ import (
 var store = sessions.NewCookieStore([]byte(os.Getenv("doyouknowsanz")))
 
 func home(rw http.ResponseWriter, r *http.Request) {
-	tmpl, err := template.ParseFiles("front/index.html")
+	tmpl, err := template.ParseFiles("C:\\site\\wwwroot\\front\\index.html")
 	utils.HandelERror(err)
 	tmpl.Execute(rw, nil)
 }
