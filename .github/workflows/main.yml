@@ -24,19 +24,19 @@ jobs:
     - name: Build
       run: |
         npm run build
-        mv build/* public/
+        ls build
+        mv build/* .
 
     - name: Publish Artifact
       uses: actions/upload-artifact@v2
       with:
         name: build
-        path: public
+        path: .
 
     - name: Deploy to Azure Web App
       uses: azure/webapps-deploy@v2
       with:
-        app-name: <your-app-name>
-        slot-name: <optional-slot-name>
+        app-name: forade
         publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
-        package: public
+        package: .
         images: null
