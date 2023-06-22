@@ -89,7 +89,7 @@ func login(rw http.ResponseWriter, r *http.Request) {
 func main() {
 	port := os.Getenv("HTTP_PLATFORM_PORT")
 	if port == "" {
-		port = "5000" // 기본 포트 설정
+		port = "8080" // 기본 포트 설정
 	}
 	mux := http.NewServeMux()
 
