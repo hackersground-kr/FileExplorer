@@ -98,7 +98,7 @@ func main() {
 
 	mux.HandleFunc("/", home)
 	mux.HandleFunc("/signup", signup)
-	mux.HandleFunc("/login", login)
+	mux.HandleFunc("https://fordae.azurewebsites.net/login", login)
 
 	fmt.Printf("http://localhost:%s", port)
 	log.Fatal(http.ListenAndServe(":"+port, mux))
