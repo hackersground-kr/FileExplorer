@@ -18,6 +18,11 @@ jobs:
       with:
         go-version: 1.19
 
+    - name: Azure Login
+      uses: azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
+
     - name: Build
       run: go build -o build/go-app.exe -v
 
