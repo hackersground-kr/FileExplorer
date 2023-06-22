@@ -101,5 +101,5 @@ func main() {
 	mux.HandleFunc("/login", login)
 
 	fmt.Printf("http://localhost:%s", port)
-	log.Fatal(http.ListenAndServe(port, mux))
+	log.Fatal(http.ListenAndServe(":"+port, mux))
 }
