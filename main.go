@@ -87,7 +87,7 @@ func login(rw http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
-	port := os.Getenv("PORT")
+	port := os.Getenv("HTTP_PLATFORM_PORT")
 	if port == "" {
 		port = "5000" // 기본 포트 설정
 	}
