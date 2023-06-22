@@ -25,16 +25,17 @@ jobs:
     - name: Test
       run: go test
 
-    - name: Check Az CLI version
-      run: az --version
-
-    - name: Install Az CLI
-      uses: azure/setup-az-cli@v1
-
     - name: Azure Login
       uses: azure/login@v1
       with:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+    - name: Install Az CLI
+      run: |
+        curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
+
+    - name: Check Az CLI version
+      run: az --version
 
     - name: Deploy to Azure
       uses: Azure/webapps-deploy@v2
@@ -43,4 +44,4 @@ jobs:
         package: build/
         slot-name: production
         publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
-        images:
+        images: 
