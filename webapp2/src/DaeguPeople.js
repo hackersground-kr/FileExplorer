@@ -1,8 +1,10 @@
 import "./css/DaguePeople.css";
+import Footer from "./Footer";
 
 export default function DaguePeople() {
   return (
     <div>
+      <div class='title'>대구광역시 혜택</div>
       <table>
         <tr>
           <th>저소득층</th>
@@ -12,7 +14,7 @@ export default function DaguePeople() {
         </tr>
         <tr>
           <td>국민 기초 생활 보장</td>
-          <td>어르신정책사업</td>
+          <td>어르신 정책 사업</td>
           <td>장애인 지원 제도</td>
           <td>교육기</td>
         </tr>
