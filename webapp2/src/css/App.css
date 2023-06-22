@@ -20,6 +20,9 @@
 
 }
 #App{
+  height: 100vh;
+  box-sizing: border-box;
+  padding-bottom: 100px;
   position: relative;
 }
 #wrap{
@@ -29,7 +32,7 @@
 }
 #first{
   width: 100%;
-  height: 100%;
+  height: 100vh;
   z-index: 100;
   position: absolute;
   display: flex;
@@ -40,11 +43,10 @@
   color: white;
   font-size: 23px;
   transition: 0.35s linear;
-
-  background-image: linear-gradient(120deg, #89f7fe 0%, #66a6ff 100%);
+  background-image: linear-gradient(to top, #0ba360 0%, #3cba92 100%);
 }
 #first h1{
-  transform: translate(0px,-60px);
+  transform: translate(0px,-5vw);
   position: relative;
   font-family: 'TTWanjudaedunsancheB';
 }
@@ -76,7 +78,7 @@
 #first h1::before{
     content: '';
     right: 90%;
-    top: -65%;
+    top: -55%;
     animation: ani2 2.4s;
 }
 #first h1::after{
@@ -84,7 +86,7 @@
     animation: ani 2.4s;
     position: absolute;
     right: 0%;
-    bottom: -65%;
+    bottom: -55%;
 }
 #first h1::before,#first h1::after{
     background-color: gold;
