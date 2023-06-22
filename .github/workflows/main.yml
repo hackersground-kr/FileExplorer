@@ -36,7 +36,6 @@ jobs:
     - name: Install Az CLI
       run: |
         curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
-
     - name: Check Az CLI version
       run: az --version
       
