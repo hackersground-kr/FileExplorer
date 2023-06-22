@@ -9,7 +9,7 @@ import (
 )
 
 func home(rw http.ResponseWriter, r *http.Request) {
-	indexHTML, err := ioutil.ReadFile("/home/site/wwwroot/webapp2/build/static/index.html")
+	indexHTML, err := ioutil.ReadFile("/home/site/wwwroot/webapp2/build/index.html")
 	if err != nil {
 		log.Fatal(err)
 	}
