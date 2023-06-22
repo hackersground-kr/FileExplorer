@@ -1,51 +1,30 @@
-name: Build and deploy Go app to Azure
+name: Deploy to Azure App Service
 
 on:
   push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+    branches:
+      - main
 
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
+    - name: Checkout repository
       uses: actions/checkout@v2
 
     - name: Set up Go
-      uses: actions/setup-go@v3
+      uses: actions/setup-go@v2
       with:
-        go-version: 1.17
+        go-version: 1.x
 
-    - name: Build
-      run: go build -o build/go-app.exe -v
+    - name: Build application
+      run: go build -o app
 
-    - name: Test
-      run: go test
-
-    - name: Azure Login
-      uses: azure/login@v1
-      with:
-        creds: ${{ secrets.AZURE_CREDENTIALS }}
-
-    - name: Print Azure credentials
-      run: echo "${{ secrets.AZURE_CREDENTIALS }}"
-
-    - name: Install Az CLI
-      run: |
-        curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
-    - name: Check Az CLI version
-      run: az --version
-      
-    - name: Set empty slot name
-      run: echo "slot-name=" >> $GITHUB_ENV
-
-    - name: Deploy to Azure
+    - name: Publish to Azure Web App
       uses: azure/webapps-deploy@v2
       with:
-        app-name: fordae
-        package: build/
+        app-name: <fordae>
         publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+        package: .
         images: null
