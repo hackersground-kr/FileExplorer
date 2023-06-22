@@ -29,7 +29,7 @@ func signup(rw http.ResponseWriter, r *http.Request) {
 		pw := r.Form.Get("userpw")
 		email := r.Form.Get("useremail")
 		sign.Signup(id, pw, email)
-		fmt.Fprint(rw, `<script>location.href='front/index.html'</script>`)
+		fmt.Fprint(rw, `<script>location.href='/home/site/wwwroot/front/index.html'</script>`)
 	}
 }
 
@@ -61,7 +61,7 @@ func login(rw http.ResponseWriter, r *http.Request) {
 			}
 			http.SetCookie(rw, cookieAnswer)
 
-			fmt.Fprint(rw, `<script>alert("`+id+`님 환영합니다");location.href='front/index.html'</script>`)
+			fmt.Fprint(rw, `<script>alert("`+id+`님 환영합니다");location.href='/home/site/wwwroot/front/index.html'</script>`)
 		} else {
 			session.Values["id"] = nil
 			session.Values["answer"] = 0
@@ -81,7 +81,7 @@ func login(rw http.ResponseWriter, r *http.Request) {
 			}
 			http.SetCookie(rw, cookieAnswer)
 
-			fmt.Fprint(rw, `<script>alert('계정이 존재하지 않습니다. 회원가입 먼저 하여주세요'); location.href='front/signup/signup.html'</script>`)
+			fmt.Fprint(rw, `<script>alert('계정이 존재하지 않습니다. 회원가입 먼저 하여주세요'); location.href='/home/site/wwwroot/front/signUp/signUp'</script>`)
 		}
 	}
 }
