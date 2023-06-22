@@ -1,4 +1,4 @@
-module gituub.com/cumedang/fileexplorer
+module github.com/cumednag/fileexplorer
 
 go 1.19
 
