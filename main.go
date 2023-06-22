@@ -26,15 +26,15 @@ func main() {
 	mux := http.NewServeMux()
 
 	// js 폴더에 대한 핸들러
-	jsHandler := http.StripPrefix("/static/js/", http.FileServer(http.Dir("static/js")))
+	jsHandler := http.StripPrefix("/static/js/", http.FileServer(http.Dir("/home/site/wwwroot/webapp2/build/static/js")))
 	mux.Handle("/static/js/", jsHandler)
 
 	// css 폴더에 대한 핸들러
-	cssHandler := http.StripPrefix("/static/css/", http.FileServer(http.Dir("static/css")))
+	cssHandler := http.StripPrefix("/static/css/", http.FileServer(http.Dir("/home/site/wwwroot/webapp2/build/static/css")))
 	mux.Handle("/static/css/", cssHandler)
 
 	// img 폴더에 대한 핸들러
-	imgHandler := http.StripPrefix("/static/img/", http.FileServer(http.Dir("static/img")))
+	imgHandler := http.StripPrefix("/static/img/", http.FileServer(http.Dir("/home/site/wwwroot/webapp2/build/static/img")))
 	mux.Handle("/static/img/", imgHandler)
 
 	mux.HandleFunc("/", home)
