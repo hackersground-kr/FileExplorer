@@ -1,6 +1,8 @@
 
 
+import Footer from './Footer';
 import './css/Main.css';
+
 
 export default function Main(){
   function closePop(){
@@ -47,6 +49,7 @@ export default function Main(){
               </div>
             </div>           
       </div>
+
     </main>
   )
 }

@@ -36,18 +36,21 @@ function App() {
           <div id='wrap'>
               <Header/>
             
-                  <BrowserRouter>
+                  <BrowserRouter >
                       <Routes>
-                          <Route path='/' nelement={ <Main/>} />
+                          <Route path='/' excat element={ <Main/>} />
                           <Route path='/DaguePeople' element={<DaguePeople/>}/>
                           <Route path='/DaeguCityhall' element={<DaeguCityhall/>}/>
                           <Route path='/DaeguNews' element={<DaeguNews/>}/>
                           <Route path='/DaeguJob' element={<DaeguJob/>}/>
                           <Route path='/Login_signup' element={<Login_signup/>}/>
                       </Routes>
+
+                      <Routes>
+                          <Route path='/*' element={   <Footer/>}/>
+                      </Routes>
                   </BrowserRouter>
-            
-              <Footer/>
+
           </div>
     </div>
   );

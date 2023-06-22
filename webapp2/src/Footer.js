@@ -1,4 +1,4 @@
-import { NavLink  } from 'react-router-dom';
+import { Link  } from 'react-router-dom';
 import './css/Footer.css';
 
 export default function Footer(){
@@ -6,44 +6,44 @@ export default function Footer(){
 
   return(
     <footer>
-        <NavLink  to="/DaeguCityhall" >
+        <Link  to="./src/DaeguCityhall" >
           <div>
             <img src="static/img/cityhall.png" /> 
             대구시청
           </div>
-        </NavLink  >
+        </Link  >
 
-        <NavLink  to="/DaeguJob" >
+        <Link  to="/DaeguJob" >
           <div>
               
             <img src='static/img/job.png'/> 
             일자리
           </div>
-        </NavLink  >
+        </Link  >
 
-        <NavLink  to="/" >
+        <Link  to="/" >
           <div>
               
             <img src='static/img/home.png'/> 
               홈
           </div>
-        </NavLink  >
+        </Link  >
   
-        <NavLink  to="/DaeguNews">
+        <Link  to="/DaeguNews">
             <div>
                 
               <img src='static/img/news.png'/> 
               뉴스
             </div>
-          </NavLink  >
+          </Link  >
 
-          <NavLink  to="/DaguePeople">
+          <Link  to="/DaguePeople">
           <div>
               
             <img src='static/img/People.png'/> 
           시민혜택
           </div>
-        </NavLink >
+        </Link >
     </footer>
   )
 }
